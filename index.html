@@ -257,6 +257,22 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
+        .video-card {
+            margin-top: 16px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--surface);
+            box-shadow: 0 8px 20px rgba(25, 39, 62, 0.06);
+            overflow: hidden;
+        }
+
+        .video-card video {
+            width: 100%;
+            display: block;
+            background: #0b1220;
+            max-height: 560px;
+        }
+
         .card {
             border: 1px solid var(--line);
             border-radius: 14px;
@@ -435,6 +451,12 @@
                     </figure>
                 </div>
             </div>
+        </section>
+
+        <section class="video-card">
+            <video controls preload="metadata">
+                <source src="篮球带解说视频demo.mp4" type="video/mp4">
+            </video>
         </section>
 
         <h2 class="section-title"><i class="fa fa-water"></i> 水下机器人系列实践</h2>
