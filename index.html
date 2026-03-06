@@ -3,124 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>马皓然 | Haoran Ma - 个人主页</title>
+    <title>马皓然 | 机器人与具身智能项目展示</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #003366; --text-color: #333; --bg-color: #f4f7f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); margin: 0; background: var(--bg-color); }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
-        
-        /* Header Section */
-        header { display: flex; align-items: center; border-bottom: 2px solid var(--primary-color); padding-bottom: 20px; margin-bottom: 30px; }
-        .profile-img { width: 150px; height: 200px; object-fit: cover; border-radius: 5px; margin-right: 30px; border: 1px solid #ddd; }
-        .info h1 { margin: 0; color: var(--primary-color); font-size: 2.2em; }
-        .info p { margin: 5px 0; font-size: 1.1em; }
-        .social-links a { margin-right: 15px; color: var(--primary-color); text-decoration: none; font-weight: bold; }
+        :root {
+            --bg: #eef2f7;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --text: #1f2937;
+            --muted: #5b6576;
+            --line: #d8e1ee;
+            --accent: #c2410c;
+            --accent-strong: #9a3412;
+            --deep: #0f1f36;
+            --ok: #0f766e;
+        }
 
-        /* Section Styling */
-        h2 { border-left: 5px solid var(--primary-color); padding-left: 15px; color: var(--primary-color); margin-top: 40px; }
-        .item { margin-bottom: 20px; }
-        .item-title { font-weight: bold; font-size: 1.1em; display: flex; justify-content: space-between; }
-        .tag { background: #e0eafc; color: #003366; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; margin-right: 5px; }
-        
-        /* Project Cards */
-        .project-card { border: 1px solid #eee; padding: 15px; border-radius: 6px; margin-top: 10px; transition: 0.3s; }
-        .project-card:hover { border-color: var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        
-        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: #f9f9f9; padding: 15px; border-radius: 6px; }
-        .skill-tag { display: inline-block; background: #eee; padding: 3px 10px; border-radius: 15px; font-size: 0.9em; margin: 3px; }
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            background:
+                radial-gradient(circle at 8% 8%, #fff4ea 0%, #eef2f7 35%),
+                linear-gradient(130deg, #eef2f7 0%, #e8eff8 100%);
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 32px));
+            margin: 30px auto 46px;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0d1f38 0%, #22385e 72%);
+            border-radius: 18px;
+            padding: 34px;
+            color: #f5f8ff;
+            box-shadow: 0 18px 44px rgba(10, 19, 36, 0.26);
+            animation: rise 0.55s ease-out;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-family: "Sora", sans-serif;
+            font-size: clamp(1.75rem, 3vw, 2.45rem);
+            letter-spacing: 0.01em;
+        }
+
+        .hero p {
+            margin: 12px 0 18px;
+            max-width: 840px;
+            color: #d5e3fb;
+            font-size: 1.05rem;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .hero-links a {
+            text-decoration: none;
+            color: #f8fbff;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            padding: 8px 14px;
+            border-radius: 999px;
+            transition: all 0.22s ease;
+            font-size: 0.9rem;
+        }
+
+        .hero-links a:hover {
+            color: #152b4c;
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .quick-facts {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 20px;
+        }
+
+        .fact {
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .fact strong {
+            display: block;
+            font-size: 1.06rem;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+
+        .fact span {
+            color: #d4def2;
+            font-size: 0.85rem;
+        }
+
+        .section-title {
+            margin: 32px 0 14px;
+            font-family: "Sora", sans-serif;
+            font-size: 1.45rem;
+            color: #132742;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-tip {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            border-left: 3px solid var(--line);
+            padding-left: 12px;
+        }
+
+        .two-col {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .panel {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--surface);
+            padding: 16px;
+            box-shadow: 0 8px 20px rgba(24, 41, 70, 0.06);
+            animation: rise 0.6s ease-out;
+        }
+
+        .panel h3 {
+            margin: 0 0 12px;
+            font-size: 1.06rem;
+            color: #122540;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            border-radius: 999px;
+            background: #eef4ff;
+            color: #123057;
+            border: 1px solid #d5e3ff;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .chip.hot {
+            background: #fff0e8;
+            border-color: #ffd8c4;
+            color: var(--accent-strong);
+        }
+
+        .featured {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(24, 41, 70, 0.08);
+        }
+
+        .featured-head {
+            padding: 18px 20px;
+            background: linear-gradient(90deg, #ffe9df 0%, #fff5f0 100%);
+            border-bottom: 1px solid #f6d8cb;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .featured-head h3 {
+            margin: 10px 0 5px;
+            color: #0f223d;
+            font-size: 1.35rem;
+        }
+
+        .featured-head p {
+            margin: 0;
+            color: #5c4d4b;
+            font-size: 0.95rem;
+        }
+
+        .featured-grid {
+            padding: 16px;
+            display: grid;
+            gap: 14px;
+            grid-template-columns: 1.3fr 1fr;
+        }
+
+        .thumb {
+            position: relative;
+            min-height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #e7edf6;
+            border: 1px solid #dae4f2;
+        }
+
+        .thumb.small { min-height: 160px; }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .thumb:hover img { transform: scale(1.05); }
+
+        .thumb-note {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            color: #f2f7ff;
+            font-size: 0.84rem;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, rgba(8, 17, 32, 0.88), rgba(8, 17, 32, 0.46));
+        }
+
+        .gallery {
+            margin-top: 16px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--surface);
+            box-shadow: 0 8px 20px rgba(25, 39, 62, 0.06);
+        }
+
+        .card-body { padding: 14px 14px 16px; }
+
+        .card h4 {
+            margin: 0;
+            color: #132844;
+            font-size: 1.02rem;
+        }
+
+        .card p {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .contact {
+            margin-top: 20px;
+            background: #fdf2f2;
+            border: 1px solid #fee2e2;
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .contact-text {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn.primary {
+            color: #fff;
+            background: var(--accent);
+        }
+
+        .btn.primary:hover { background: var(--accent-strong); }
+
+        .btn.secondary {
+            color: #374151;
+            background: #fff;
+            border: 1px solid #d1d5db;
+        }
+
+        footer {
+            margin-top: 24px;
+            color: #6b7280;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 980px) {
+            .quick-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .featured-grid, .two-col { grid-template-columns: 1fr; }
+            .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 640px) {
+            .quick-facts, .gallery { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <img src="your-photo.jpg" alt="马皓然" class="profile-img">
-        <div class="info">
-            <h1>马皓然 (Haoran Ma)</h1>
-            <p><strong>西安交通大学 · 自动化学院</strong> [cite: 3]</p>
-            <p><i class="fa fa-envelope"></i> 1716973316@stu.xjtu.edu.cn [cite: 2]</p>
-            <p><i class="fa fa-location-dot"></i> 意向方向：具身智能 / 机器人控制 / 强化学习 [cite: 3]</p>
-            <div class="social-links">
-                <a href="https://github.com/hrm-666"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fa fa-file-pdf"></i> 下载完整简历</a>
+    <main class="wrap">
+        <section class="hero">
+            <h1>马皓然 | 个人主页</h1>
+            <p>
+                感谢您在百忙之中查阅。我目前就读于西安交通大学自动化专业，聚焦<strong>具身智能与机器人控制</strong>。
+                我热爱在实验室中打磨算法与硬件系统的过程，期待在导师的悉心指导下，为解决领域内的核心挑战贡献绵薄之力。
+            </p>
+            <div class="hero-links">
+                <a href="mailto:1716973316@stu.xjtu.edu.cn?subject=%E4%BF%9D%E7%A0%94%E5%A5%97%E7%A3%81-%E9%A9%AC%E7%9A%93%E7%84%B6&body=%E8%80%81%E5%B8%88%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AD%A6%E9%99%A2%E7%9A%84%E9%A9%AC%E7%9A%93%E7%84%B6%E3%80%82%E9%9D%9E%E5%B8%B8%E6%84%9F%E8%B0%A2%E6%82%A8%E5%9C%A8%E7%99%BE%E5%BF%99%E4%B9%8B%E4%B8%AD%E6%9F%A5%E9%98%85%E6%88%91%E7%9A%84%E4%BF%A1%E6%81%AF%E3%80%82%0D%0A%0D%0A%E6%88%91%E5%AF%B9%E6%82%A8%E8%AF%BE%E9%A2%98%E7%BB%84%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E6%B7%B1%E6%84%9F%E5%85%B4%E8%B6%A3%EF%BC%8C%E5%B9%B6%E5%B7%B2%E9%99%84%E4%B8%8A%E6%88%91%E7%9A%84%E8%AF%A6%E7%BB%86%E7%AE%80%E5%8E%86%EF%BC%8C%E6%81%B0%E5%88%87%E5%9C%B0%E6%9C%9F%E5%BE%85%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%BE%97%E4%B8%80%E6%AC%A1%E5%AD%A6%E4%B9%A0%E6%88%96%E9%9D%A2%E8%AF%95%E7%9A%84%E6%9C%BA%E4%BC%9A%E3%80%82"><i class="fa fa-envelope"></i> 邮件联系</a>
+                <a href="SimpleResume_2026_3_6_用于保研第一套版_.pdf" target="_blank"><i class="fa fa-file-pdf"></i> 下载详细简历</a>
+                <a href="https://github.com/hrm-666" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
-        </div>
-    </header>
 
-    <section>
-        <h2><i class="fa fa-graduation-cap"></i> 教育背景</h2>
-        <div class="item">
-            <div class="item-title">
-                <span>西安交通大学 · 自动化专业 (学科评估: A+)</span>
-                <span>2022 - 2026 (预计)</span>
+            <div class="quick-facts">
+                <div class="fact">
+                    <strong>GPA 92.51/100</strong>
+                    <span>勤勉踏实，成绩稳步前行</span>
+                </div>
+                <div class="fact">
+                    <strong>专业排名 6/172</strong>
+                    <span>全院前 3.4%</span>
+                </div>
+                <div class="fact">
+                    <strong>国家级一等奖</strong>
+                    <span>ROBOCON 团队协作成果</span>
+                </div>
+                <div class="fact">
+                    <strong>国家奖学金</strong>
+                    <span>2024-2025 年度勉励</span>
+                </div>
             </div>
-            <div class="stat-grid">
-                <div><strong>GPA:</strong> 92.51 / 100 [cite: 7]</div>
-                <div><strong>专业排名:</strong> 6 / 172 (Top 3.4%) [cite: 7]</div>
-                <div><strong>荣誉:</strong> 国家奖学金 (2024-2025) [cite: 6]</div>
-                <div><strong>头衔:</strong> 西安交大“优秀学生” [cite: 6]</div>
-            </div>
-            <p><strong>核心课程：</strong> 程序设计基础(100)、工数(98)、线代(96)、模电(95) [cite: 8]</p>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2><i class="fa fa-flask"></i> 科研与项目经历</h2>
-        <div class="project-card">
-            <div class="item-title">
-                <span>基于强化学习的人形机器人运动控制 (Unitree G1)</span>
-                <span>2025.12 - 至今</span>
-            </div>
-            <p><span class="tag">项目负责人</span> 西安交大“信息新蕾计划” [cite: 12]</p>
-            <ul>
-                <li>基于 Isaac Gym 搭建 G1 仿真环境，配置 GPU 服务器完成强化学习训练 。</li>
-                <li>通过微调 Reward Shaping 抑制关节抖动，探索 Sim-to-Real 迁移验证 [cite: 14, 15]。</li>
-            </ul>
-        </div>
+        <h2 class="section-title"><i class="fa fa-compass"></i> 研究兴趣与基础</h2>
+        <p class="section-tip">我由衷热爱机器人学，并希望在“感知-决策-控制”的闭环研究中长期深耕。</p>
+        <section class="two-col">
+            <article class="panel">
+                <h3>长期关注的研究方向</h3>
+                <div class="chips">
+                    <span class="chip hot">具身智能</span>
+                    <span class="chip hot">强化学习</span>
+                    <span class="chip">机器人控制</span>
+                    <span class="chip">Sim2Real 迁移</span>
+                    <span class="chip">多传感器融合</span>
+                </div>
+            </article>
+            <article class="panel">
+                <h3>已储备的技术基础</h3>
+                <div class="chips">
+                    <span class="chip">Python / PyTorch</span>
+                    <span class="chip">C/C++</span>
+                    <span class="chip">ROS2</span>
+                    <span class="chip">Isaac Gym / MuJoCo</span>
+                    <span class="chip">嵌入式实时控制</span>
+                </div>
+            </article>
+        </section>
 
-        <div class="project-card">
-            <div class="item-title">
-                <span>CS231n: 面向视觉识别的卷积神经网络</span>
-                <span>2025.01 - 2025.02</span>
-            </div>
-            <p><span class="tag">课程实践</span> <a href="https://github.com/hrm-666/CS231n-Assignments">代码仓库</a> [cite: 16, 17]</p>
-            <ul>
-                <li>NumPy 手写实现 CNN 前/反向传播，掌握 BatchNorm, Dropout 及 Adam 优化器 [cite: 20]。</li>
-            </ul>
-        </div>
-    </section>
+        <h2 class="section-title"><i class="fa fa-robot"></i> ROBOCON 竞赛锤炼</h2>
+        <p class="section-tip">在团队中担任 R2 车长，深刻体会到了工程落地中“系统思维”与“团队协作”的价值。</p>
 
-    <section>
-        <h2><i class="fa fa-trophy"></i> 竞赛获奖</h2>
-        <div class="item">
-            <div class="item-title">
-                <span>全国大学生机器人大赛 ROBOCON (飞身上篮)</span>
-                <span>国家级一等奖 [cite: 28]</span>
+        <section class="featured">
+            <div class="featured-head">
+                <span class="badge">KEY EXPERIENCE</span>
+                <h3>全国大学生机器人大赛 ROBOCON</h3>
+                <p>核心成长：构建了高性能反馈链路，并在现场联调中不断优化系统的稳定性与鲁棒性。</p>
             </div>
-            <p><strong>职责：</strong> 整车车长，主导高性能全向轮底盘控制系统构建 [cite: 29]。</p>
-            <p><strong>技术亮点：</strong> FreeRTOS 多任务解耦、1kHz FDCAN 反馈、IMU 位姿融合算法 [cite: 30]。</p>
-        </div>
-        <div class="item">
-            <div class="item-title">
-                <span>RoboCup 中国赛 / 美国建模竞赛</span>
-                <span>国三 / H 奖 [cite: 32, 38]</span>
+
+            <div class="featured-grid">
+                <figure class="thumb">
+                    <img src="2025Robocon国赛赛后R2车组合照.jpg" alt="赛后合照">
+                    <figcaption class="thumb-note">R2 车组：团队共同努力后的圆满时刻</figcaption>
+                </figure>
+
+                <div class="col-stack" style="display:grid; gap:14px;">
+                    <figure class="thumb small">
+                        <img src="2025Robocon国赛R1.jpg" alt="R1细节">
+                        <figcaption class="thumb-note">实战中的控制细节调优</figcaption>
+                    </figure>
+                    <figure class="thumb small">
+                        <img src="Robocon赛场图.jpeg" alt="赛场比赛图">
+                        <figcaption class="thumb-note">赛场比赛现场：临场协同与快速应对</figcaption>
+                    </figure>
+                    <figure class="thumb small">
+                        <img src="Robocon前期底盘研制.jpg" alt="研制过程">
+                        <figcaption class="thumb-note">研制初期：从底层方案开始扎实落地</figcaption>
+                    </figure>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2><i class="fa fa-code"></i> 专业技能</h2>
-        <div>
-            <strong>编程 & 框架:</strong> 
-            <span class="skill-tag">Python (PyTorch)</span> <span class="skill-tag">C/C++</span> <span class="skill-tag">ROS2</span> [cite: 9]
-        </div>
-        <div style="margin-top:10px;">
-            <strong>仿真 & 嵌入式:</strong> 
-            <span class="skill-tag">Isaac Gym</span> <span class="skill-tag">MuJoCo</span> <span class="skill-tag">STM32</span> <span class="skill-tag">FreeRTOS</span> [cite: 9]
-        </div>
-    </section>
-</div>
+        <h2 class="section-title"><i class="fa fa-water"></i> 水下机器人系列实践</h2>
+        <p class="section-tip">从 ROV 到 AUV，通过跨场景的挑战，不断磨炼自己处理复杂工况与非确定性环境的能力。</p>
 
+        <section class="gallery">
+            <article class="card">
+                <figure class="thumb small">
+                    <img src="2025RobuCup水下ROV图一.jpg" alt="ROV1">
+                </figure>
+                <div class="card-body">
+                    <h4>2025 RoboCup ROV</h4>
+                    <p>优化执行机构，致力于提升水下作业的可靠性。</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="thumb small">
+                    <img src="2025RobuCup水下ROV图二.jpg" alt="ROV2">
+                </figure>
+                <div class="card-body">
+                    <h4>2025 RoboCup ROV</h4>
+                    <p>针对复杂工况进行推进链路调优与系统稳定性验证。</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="thumb small">
+                    <img src="2024RoboCup水下AUV.jpg" alt="AUV">
+                </figure>
+                <div class="card-body">
+                    <h4>2024 RoboCup AUV</h4>
+                    <p>完成了自主导航基础验证，开启了机器人学探索之路。</p>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="section-title"><i class="fa fa-book"></i> 近期学习与反思</h2>
+        <section class="two-col">
+            <article class="panel">
+                <h3>人形机器人强化学习</h3>
+                <p>正积极复现 Unitree G1 仿真流程。在探索奖励设计的过程中，我深感科研的精微，正努力通过实践查漏补缺。</p>
+            </article>
+            <article class="panel">
+                <h3>基础理论强化</h3>
+                <p>完成了 CS231n 课程实践。通过手写模块，我进一步巩固了对感知算法底层的敬畏与理解。</p>
+            </article>
+        </section>
+
+        <section class="contact">
+            <div class="contact-text">
+                <strong>期待与您的交流：</strong><br>
+                如果您所在的课题组有具身智能或机器人控制相关的科研机会，我恳请能获得一次面试或试训的机会。
+                我深知自己在科研领域仍是初学者，但我具备<strong>极强的执行力和长期投入的决心</strong>。无论结果如何，都感谢您的耐心查阅。
+            </div>
+            <div class="contact-actions">
+                <a class="btn primary" href="mailto:1716973316@stu.xjtu.edu.cn?subject=%E5%A5%97%E7%A3%81%E5%92%A8%E8%AF%A2-%E9%A9%AC%E7%9A%93%E7%84%B6"><i class="fa fa-paper-plane"></i> 发送联系邮件</a>
+                <a class="btn secondary" href="SimpleResume_2026_3_6_用于保研第一套版_.pdf" target="_blank">查看 PDF 简历</a>
+            </div>
+        </section>
+
+        <footer>
+            期待在您的指导下不断完善。最后更新：2026年3月。
+        </footer>
+    </main>
 </body>
 </html>
