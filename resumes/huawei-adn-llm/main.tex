@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\setmainfont{Arial}
+
+\definecolor{DeepBlue}{RGB}{0, 51, 102}
+
+\geometry{left=1.45cm, right=1.45cm, top=1.2cm, bottom=1.2cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=DeepBlue,
+    linkcolor=DeepBlue
+}
+
+\titleformat{\section}{\large\bfseries\color{DeepBlue}}{}{0em}{}[\color{DeepBlue}\titlerule]
+\titlespacing{\section}{0pt}{0.8ex}{0.5ex}
+
+\begin{document}
+
+\hfill
+\smash{\makebox[0pt][r]{%
+    \raisebox{-87pt}{%
+        \includegraphics[width=0.172\textwidth]{picture.jpg}%
+    }%
+}}
+
+\vspace{-1.4em}
+
+\noindent {\LARGE \textbf{\color{DeepBlue}马皓然}} \\
+\vspace{1.5mm}
+\small 电话：189-8383-5950 | 邮箱：\href{mailto:1716973316@stu.xjtu.edu.cn}{1716973316@stu.xjtu.edu.cn} \\
+\small 个人主页：\href{https://hrm-666.github.io/}{hrm-666.github.io} | 院校：西安交通大学 · 自动化学院 \\
+\small 意向方向：大模型决策 / 强化学习 / 具身智能
+
+\vspace{0.8em}
+
+\section{教育背景}
+\textbf{西安交通大学 · 自动化专业（学科评估：A+）} \hfill \textbf{GPA：91.29/100 | 排名：7/172（Top 4\%）}\\
+\textbf{荣誉奖励：}2024-2025 学年国家奖学金、西安交通大学“优秀学生”称号 \hfill \textbf{英语：}CET-4/6\\
+\textbf{核心课程：}程序设计基础（100）、工科数学分析 I（98）、线性代数（96）、模拟电子技术（95）。\\
+\textbf{专业技能：}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{机器人全栈：}熟悉机器人 \textbf{电控、硬件结构、控制算法与系统联调} 全流程，具备从底层驱动、通信链路到整车调试和策略落地的工程经验。
+    \item \textbf{AI 与强化学习：}熟悉 \textbf{PyTorch、CNN、Transformer、PPO、DQN、Reward Shaping}，使用 \textbf{Isaac Gym、MuJoCo} 完成仿真训练与策略调优。
+    \item \textbf{机器人系统：}掌握 \textbf{ROS2、Gazebo、RViz2、STM32、FreeRTOS、CAN/FDCAN、IMU}，具备感知、控制、通信与底层驱动联调经验。
+\end{itemize}
+
+\section{竞赛与成果}
+\textbf{2026 全国大学生机器人大赛 ROBOCON“武林探秘”}\\
+{\small 项目开源：\href{https://gitee.com/ma-haoran567/r1_chassis}{Gitee: ma-haoran567/r1\_chassis}}
+{\small \textbullet\ \textbf{核心工作：}担任电控组组长，协助两车联调；使用 \textbf{Git} 审核代码与跟踪问题，基于卡尔曼滤波修正雷达定位数据，设计 \textbf{LQR} 刹车控制与路径规划算法。}\\
+\textbf{2025 全国大学生机器人大赛 ROBOCON“飞身上篮”} \hfill \textbf{国家级一等奖}\\
+{\small \textbullet\ \textbf{核心工作：}负责舵轮底盘控制与系统联调，应用 \textbf{FreeRTOS} 解耦任务，设计 \textbf{IMU} 位姿融合算法，并通过模块化接口组织控制链路。}\\
+\textbf{2025 中国大学生机器人大赛暨 RoboCup 中国赛} \hfill \textbf{国家级三等奖}\\
+\textbf{2024 中国大学生机器人大赛暨 RoboCup 中国赛} \hfill \textbf{国家级三等奖}\\
+\textbf{2025 第十八届先进机器人及仿真技术大赛（水下目标抓取 / 水下作业）} \hfill \textbf{国赛三等奖（2项）}\\
+\textbf{2025 美国大学生数学建模竞赛 (MCM/ICM)} \hfill \textbf{H奖 (Honorable Mention)}
+
+\section{科研与项目经历}
+\textbf{清华大学深圳研究院李秀老师课题组线上科研实习} \hfill 2026.04 - 至今 \\
+{\small 实习方向：强化学习 / JEPA 世界模型 / VLA-JEPA 复现}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{强化学习实验：}学习 \textbf{MDP、TD、DQN、PPO、DDPG}，搭建 DQN CartPole 训练/推理脚本并完成 7 组超参数对比。
+    \item \textbf{模型与复现：}阅读 \textbf{JEPA、V-JEPA2、pi0、VLA-JEPA} 论文与源码，配置 \textbf{VLA-JEPA} 与 \textbf{LIBERO-Plus} 完成 \textbf{9482} 条 rollout；复现宏平均成功率 \textbf{80.22\%}，与论文 \textbf{79.49\%} 基本一致。
+\end{itemize}
+
+\textbf{基于强化学习的人形机器人运动控制研究 (Unitree G1)} \hfill 2025.12 - 至今 \\
+{\small 项目职位：西安交通大学“信息新蕾计划”项目负责人}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{研究内容：}基于 \textbf{Isaac Gym} 搭建 Unitree G1 仿真训练流程，围绕 \textbf{Observation}、\textbf{Reward Shaping} 与策略推理部署开展调试，形成对 \textbf{Sim-to-Real} 的初步理解。
+\end{itemize}
+
+\textbf{省级大创：高动态物流机器人控制技术研究} \hfill 2025.05 - 2026.04 \\
+{\small 项目职位：项目负责人 / 电控算法负责人}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{主要内容：}负责底层电控架构与控制算法实现，协同完成 \textbf{SolidWorks} 仿真、硬件联调与底盘测试。
+\end{itemize}
+
+\section{学术成果与专利}
+\textbf{发明专利：一种用于无人机的机械臂及其制造方法} \hfill \textbf{第三发明人} \\
+{\small 状态：已受理 / 实审中（申请号：202411624467.2 \quad 申请日：2024.02.09）}
+
+\end{document}

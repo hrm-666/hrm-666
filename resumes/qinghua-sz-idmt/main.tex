@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\setmainfont{Arial}
+
+\definecolor{DeepBlue}{RGB}{0, 51, 102}
+
+\geometry{left=1.45cm, right=1.45cm, top=1.2cm, bottom=1.2cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=DeepBlue,
+    linkcolor=DeepBlue
+}
+
+\titleformat{\section}{\large\bfseries\color{DeepBlue}}{}{0em}{}[\color{DeepBlue}\titlerule]
+\titlespacing{\section}{0pt}{0.8ex}{0.5ex}
+
+\begin{document}
+
+\hfill
+\smash{\makebox[0pt][r]{%
+    \raisebox{-87pt}{%
+        \includegraphics[width=0.172\textwidth]{picture.jpg}%
+    }%
+}}
+
+\vspace{-1.4em}
+
+\noindent {\LARGE \textbf{\color{DeepBlue}马皓然}} \\
+\vspace{1.5mm}
+\small 电话：189-8383-5950 | 邮箱：\href{mailto:1716973316@stu.xjtu.edu.cn}{1716973316@stu.xjtu.edu.cn} \\
+\small 个人主页：\href{https://hrm-666.github.io/}{hrm-666.github.io} | 院校：西安交通大学 · 自动化学院 \\
+\small 意向方向：游戏设计与技术 / 智能交互 / AI 驱动的互动媒体
+
+\vspace{0.8em}
+
+\section{教育背景}
+\textbf{西安交通大学 · 自动化专业} \hfill \textbf{GPA：91.24/100 | 排名：7/172（Top 4\%）}\\
+\textbf{荣誉奖励：}2024-2025 学年国家奖学金、西安交通大学“优秀学生”称号 \hfill \textbf{英语：}CET-6\\
+\textbf{相关课程：}程序设计基础（100）、工科数学分析 I（98）、线性代数（96）、数字图像处理（100）。\\
+\textbf{学生工作：}西安交通大学 ROBOCON 俱乐部电控组组长，负责方案评审、成员培训与项目联调。
+
+\textbf{专业技能：}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{游戏与互动媒体开发：}使用 \textbf{Unity/C\#} 进行游戏与交互原型开发，具备玩法机制设计、交互流程搭建、物理系统实现、场景整合与项目调试经验。
+    \item \textbf{AI与智能体技术：}具备 PyTorch 基础使用经验，了解Transformer 与 PPO 等算法的基本原理，曾使用Isaac Gym 和 MuJoCo 进行基础仿真训练与策略调试。
+    \item \textbf{机器人与虚实交互：}掌握 ROS2、Gazebo、STM32、FreeRTOS、CAN/FDCAN 与 IMU，具备动作控制、仿真验证、软硬件通信及复杂系统联调经验。
+\end{itemize}
+\section{科研与项目经历}
+\textbf{EMERGE-Policy: A Robot Mind Emerges Beyond a Single Policy} \hfill 2026.04 - 至今 \\
+{\small 清华大学深圳国际研究生院科研实习｜论文预印本共同作者}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{项目内容：}针对单一 VLA 在长程任务中容易出现错误累积的问题，通过 Main Agent、Sub-Agent 与统一技能库协作，实现任务拆解、状态验证与局部恢复。
+    \item \textbf{个人工作：}负责真机实验落地，完成数据采集、π0.5 微调、Piper 机械臂部署、RealSense 相机标定与目标空间定位，参与长程纸杯堆叠任务的系统验证。
+\end{itemize}
+
+\textbf{沙漠坦克对战：基于 Unity 的策略射击游戏原型} \hfill 2026.06 \\
+{\small 个人项目｜游戏策划与程序开发}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{核心设计：}围绕“移动—瞄准—蓄力—抛射—躲避”构建战斗循环，加入抛物线弹道、落点预测、随机增益和短局结算机制。
+    \item \textbf{主要实现：}使用 Unity 完成角色控制、炮口调整、蓄力发射、命中反馈及菜单结算系统，并设计 AI 对手的抛射攻击与追踪逻辑。
+\end{itemize}
+
+\textbf{基于单目视频的 G1 跨形态动作迁移与跟踪} \hfill 2025.12 - 2026.02 \\
+{\small 个人项目｜动作重建与强化学习控制}
+\begin{itemize}[leftmargin=1.5em, noitemsep, topsep=2pt]
+    \item \textbf{动作重建与迁移：}录制单人动作视频，使用 PromptHMR 恢复连续的 SMPL-X 人体运动，并通过 GMR 与 IK 优化将人体动作映射为 Unitree G1 参考轨迹。
+    \item \textbf{策略训练与验证：}在 MuJoCo 中使用 RSL-RL 完成 PPO 策略训练，使 G1 跟踪重定向后的参考动作，完成“人物视频—三维运动重建—跨形态重定向—动作跟踪”的完整流程。
+\end{itemize}
+
+\section{竞赛获奖}
+\textbf{2026 全国大学生机器人大赛 ROBOCON“武林探秘”} \hfill \textbf{国家级一等奖}\\
+{\small 项目开源：\href{https://gitee.com/ma-haoran567/r1_chassis}{Gitee: ma-haoran567/r1\_chassis}}\\
+\textbf{2025 全国大学生机器人大赛 ROBOCON“飞身上篮”} \hfill \textbf{国家级一等奖}\\
+\textbf{2025 中国大学生机器人大赛暨 RoboCup 中国赛} \hfill \textbf{国家级三等奖}\\
+\textbf{2024 中国大学生机器人大赛暨 RoboCup 中国赛} \hfill \textbf{国家级三等奖}\\
+\textbf{2025 第十八届先进机器人及仿真技术大赛（水下目标抓取 / 水下作业）} \hfill \textbf{国赛三等奖（2项）}\\
+\textbf{2025 美国大学生数学建模竞赛 (MCM/ICM)} \hfill \textbf{H奖 (Honorable Mention)}
+
+\section{学术成果与专利}
+\textbf{发明专利：一种用于无人机的机械臂及其制造方法} \hfill \textbf{第三发明人} \\
+{\small 状态：已授权（申请号：202411624467.2 \quad 申请日：2024.02.09）}
+
+\end{document}
